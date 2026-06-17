@@ -21,7 +21,7 @@ main() {
   # --- Temp workspace, cleaned up no matter how we exit ----------------------
   local tmp
   tmp="$(mktemp -d)"
-  trap 'rm -rf "$tmp"' EXIT
+  trap 'rm -rf "${tmp:-}"' EXIT
 
   # --- 1. Fetch manifest -----------------------------------------------------
   info "1/7  Fetching package manifest from Valve's CDN..."
